@@ -1,10 +1,12 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 export default function Index() {
   return (
     <View style={styles.container}>
-      <Text style={{color:'white',fontSize:20,fontWeight:'bold'}}>Hello World!</Text>
-      {/* <StatusBar/> */}
+      <View style={{backgroundColor:'lightblue', height:200,width:200}}>
+      </View>
+      <View style={{backgroundColor:'lightgreen', height:200,width:200}}>
+      </View>
     </View>
   );
 }
@@ -12,8 +14,8 @@ export default function Index() {
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    backgroundColor:'green',
-    alignItems:'center',
-    justifyContent:'center'
+    backgroundColor:'plum',
+    // alignItems:'center',
+    // justifyContent:'center'
   }
 })
