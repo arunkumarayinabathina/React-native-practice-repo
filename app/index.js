@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ActivityIndicator, Button, Image, View } from "react-native";
+import { Alert, Button, View } from "react-native";
 
 const logoImage = require("../assets/images/adaptive-icon.png")
 
@@ -8,18 +8,30 @@ export default function Index() {
 
   return (
       <View style={{flex:1,backgroundColor:'lightblue'}}>
-        <ActivityIndicator
-          size={"large"}
-          color={"red"}
-          animating={isLoading}
-        />
-        <Image
-          source={logoImage}
-          style={{width:200,height:200}}
+        <Button
+          title="alert"
+          onPress={()=>Alert.alert("Invalid data")}
         />
         <Button
-        title="Button control"
-        onPress={()=>setIsLoading(!isLoading)}
+          title="alert2"
+          onPress={()=>Alert.alert("Invalid data","DOB incorrect")}
+        />
+        <Button
+          title="alert3"
+          onPress={()=>Alert.alert("Invalid data","DOB incorrect",[
+            {
+              text:"cancel",
+              onPress:()=>console.log("Cancel Pressed")
+            },
+            {
+              text:"submit",
+              onPress:()=>console.log("Submit Pressed")
+            },
+            {
+              text:"open",
+              onPress:()=>console.log("Open Pressed")
+            },
+          ])}
         />
       </View>
   );
